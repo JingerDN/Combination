@@ -197,7 +197,3 @@ console.log(chooseDistance(174,k, ls ));
 
 
 
-
-
-
-
