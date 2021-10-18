@@ -38,8 +38,11 @@ function getFinalResult(value,t){
         let max=Math.max.apply(null, negative);
         let index=sum.indexOf(max);
         let x=value[index];
-        console.log(`Resulting array of digits  ${x}, less than k by ${max} `);
-        return x;
+        q=value[index].reduce((a,b)=>{
+            return a+b;
+        })
+        console.log(`Resulting array of digits  ${x}, less than k by ${max} ${q}`);
+        return q;
     }
 }
 
