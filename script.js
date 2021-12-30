@@ -11,7 +11,7 @@ let i,p,w,k,arg;
 
 function getSecondArg(arg){
 
-    console.log(rest=ls);
+    rest=ls;
         for(let x=0;x<arg.length;x++){
             rest=rest.filter((elem)=>{
             return elem!==arg[x];
@@ -32,6 +32,7 @@ function getFinalResult(value,t){
     });
     if(negative.length==0){
         console.log("There is no acceptable result");
+        return null;
     }
     else
     {
@@ -41,7 +42,7 @@ function getFinalResult(value,t){
         q=value[index].reduce((a,b)=>{
             return a+b;
         })
-        console.log(`Resulting array of digits  ${x}, less than k by ${max} ${q}`);
+        console.log(`Resulting array of digits  ${x}, makes sum ${q}`);
         return q;
     }
 }
@@ -49,6 +50,7 @@ function getFinalResult(value,t){
 let chooseDistance = (t, k, ls) => {
 if(k>4){
     console.log("There is no acceptable result");
+    return null;
 }    
 
 if(k==4){
@@ -66,9 +68,9 @@ if(k==4){
     function getCombination(i,p,w,k){
     
         let o=getFirstArg(i,p,w,k);
-        console.log(o);
+        //console.log(o);
         let n=getSecondArg(o);
-        console.log(n);
+        //console.log(n);
         
     
         for(j=0;j<n.length;j++){
@@ -83,18 +85,18 @@ if(k==4){
         for(let a=0;a<ls.length;a++){
             for(i=c,p=a,w=0;w<ls.length;w++){
                 if(a==i){
-                    console.log("we met a=i!");
+                    //console.log("we met a=i!");
                     continue;
                 }
                 if(w==i){
-                    console.log("we met w=i!");
+                    //console.log("we met w=i!");
                     continue;
                 }
                 if(w==p){
-                    console.log("we met w=p!");
+                    //console.log("we met w=p!");
                     continue;
                 }
-                console.log(getCombination(i,p,w,4));    
+                getCombination(i,p,w,4);    
             }
         }
     }
@@ -110,9 +112,9 @@ else if(k==3){
     
     function getCombination(i,p,k){
         let o=getFirstArg(i,p,k);
-        console.log(o);
+        //console.log(o);
         let n=getSecondArg(o);
-        console.log(n);
+        //console.log(n);
         
     
         for(j=0;j<n.length;j++){
@@ -125,11 +127,11 @@ else if(k==3){
     for(let a=0;a<ls.length;a++){
         for(i=a,p=0;p<ls.length;p++){
             if(p==i){
-                console.log("we met w=i!");
+                //console.log("we met w=i!");
                 continue;
             }
             else{
-                console.log(getCombination(i,p,3));    
+                (getCombination(i,p,3));    
             }
         }
     }
@@ -143,9 +145,9 @@ else if(k==2){
     }
     function getCombination(i,k){
         let o=getFirstArg(i,k);
-        console.log(o);
+        //console.log(o);
         let n=getSecondArg(o);
-        console.log(n);
+        //console.log(n);
 
         for(j=0;j<n.length;j++){
             let semiResult=o.concat(n[j]);
@@ -154,7 +156,7 @@ else if(k==2){
         return result;
     } 
     for(i=0;i<ls.length;i++){
-        console.log(getCombination(i,2));    
+        getCombination(i,2);    
     }  
 }
 return getFinalResult(result,t)
@@ -162,5 +164,5 @@ return getFinalResult(result,t)
 
 
 
-chooseDistance (174, 3, ls);
+console.log(chooseDistance (174, 4, ls));
 
